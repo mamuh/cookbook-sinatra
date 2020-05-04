@@ -9,5 +9,10 @@ configure :development do
 end
 
 get '/' do
-  'Hello world!'
+  @recipes = @cookbook.all
+  erb :index
+end
+
+get '/about' do
+  erb :about
 end
