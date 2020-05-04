@@ -1,7 +1,9 @@
-<p>
-  I'm in a <em>view</em>!
-</p>
-<ul>
-  @recipes.each do |recipe|
-  <li><%= recipe.name =></li>
-</ul>
+<div class="container">
+  <ul>
+    <% @recipes.each do |recipe| %>
+    <li><%= recipe.name %></li>
+    <% end %>
+  </ul>
+
+  <a href="/new">Create new</a>
+</div>
