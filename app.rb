@@ -35,5 +35,6 @@ end
 get '/recipes/:index' do
   @recipes = cookbook.all
   @recipes.delete_at(params[:index].to_i)
+  cookbook.remove_recipe(params[:index].to_i)
   redirect '/'
 end

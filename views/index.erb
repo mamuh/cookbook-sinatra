@@ -3,7 +3,7 @@
   <ul class="recipe-list">
     <% @recipes.each_with_index do |recipe, index| %>
     <li class="list-item">
-      <h4><%= recipe.name %></h4>
+      <h4><%= index + 1 %>. <%= recipe.name %></h4>
       <p><%= recipe.description %></p>
       <a href="/recipes/<%= index %>">Delete</a>
     </li>
