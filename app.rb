@@ -28,5 +28,12 @@ post '/create' do
   new_recipe = Recipe.new(params[:name], params[:description])
   cookbook.add_recipe(new_recipe)
   @recipes = cookbook.all
-  erb :index
+  redirect '/'
+end
+
+
+get '/recipes/:index' do
+  @recipes = cookbook.all
+  @recipes.delete_at(params[:index].to_i)
+  redirect '/'
 end

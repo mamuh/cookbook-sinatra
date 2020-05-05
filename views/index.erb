@@ -1,13 +1,11 @@
 <div class="container">
   <a class="button" href="/new">Create new recipe</a>
   <ul class="recipe-list">
-    <% @recipes.each do |recipe| %>
+    <% @recipes.each_with_index do |recipe, index| %>
     <li class="list-item">
       <h4><%= recipe.name %></h4>
-      <br>
       <p><%= recipe.description %></p>
-      <br>
-      <a href="/destroy">[x]</a>
+      <a href="/recipes/<%= index %>">Delete</a>
     </li>
     <% end %>
   </ul>
